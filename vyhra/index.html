@@ -1,1 +1,45 @@
-
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>Phishing: právě jste klikli na návnadu</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1220;--panel:#152236;--text:#edf4ff;--muted:#b5c4d8;--red:#ff6975;--blue:#6fd8ff;--green:#91e8b2}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#1d3049 0,#0b1220 55%);color:var(--text);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{max-width:780px;margin:auto;padding:clamp(24px,6vw,64px) 20px 70px}.eyebrow{color:var(--blue);font-weight:800;letter-spacing:.14em;font-size:.8rem;text-transform:uppercase}
+    h1{font-size:clamp(2.1rem,6vw,3.5rem);line-height:1.12;margin:.5em 0}.warning{color:var(--red)}.lead{font-size:1.15rem;color:var(--muted)}
+    .card{background:var(--panel);border:1px solid #344861;border-radius:18px;padding:25px;margin:24px 0;box-shadow:0 15px 35px #0002}h2{font-size:1.35rem;margin:0 0 12px}ul,ol{padding-left:1.4rem}li{margin:.6rem 0}strong{color:#fff}
+    .good{border-left:5px solid var(--green)}.small{color:var(--muted);font-size:.9rem}footer{margin-top:32px;text-align:center;color:var(--muted);font-size:.9rem}.tag{display:inline-block;border:1px solid #48617a;border-radius:99px;padding:4px 12px;color:var(--blue);font-weight:700;font-size:.8rem}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">IKT · Bezpečnost na internetu</div>
+  <h1><span class="warning">Pozor!</span><br>Právě jste klikli na phishingovou návnadu.</h1>
+  <p class="lead">Žádný telefon jste nevyhráli. E-mail byl součástí školního cvičení, které ukazuje, jak snadno nás může podvodná zpráva přimět k rychlému kliknutí.</p>
+  <div class="card good"><span class="tag">Dobrá zpráva</span><h2 style="margin-top:12px">Tohle byla simulace</h2><p>Tato stránka po vás nechce žádné údaje, nic nestahuje a nemá formulář. Cílem je ukázat riziko, ne vás nachytat kvůli známce.</p></div>
+  <section class="card"><h2>🚩 Co mělo vzbudit podezření?</h2><ul>
+    <li><strong>Výhra bez soutěže:</strong> Kdy a kde jste se vlastně přihlásili?</li>
+    <li><strong>Nátlak na čas:</strong> „Do 24 hodin“ má zabránit přemýšlení.</li>
+    <li><strong>Žádost o ověření totožnosti:</strong> Podvodníci často chtějí hesla nebo osobní údaje.</li>
+    <li><strong>Neznámý odesílatel:</strong> Adresa sama o sobě nedokazuje, kdo zprávu poslal.</li>
+    <li><strong>Odkaz na nesouvisející web:</strong> Doména <code>github.io</code> není web pořadatele údajné soutěže.</li>
+  </ul></section>
+  <section class="card"><h2>⚠️ Co by se mohlo stát doopravdy?</h2><ul>
+    <li>Na falešné stránce byste zadali <strong>heslo</strong> a útočník by mohl převzít váš účet.</li>
+    <li>Mohli byste prozradit <strong>osobní nebo platební údaje</strong>.</li>
+    <li>Stránka by vás mohla přimět <strong>stáhnout škodlivý soubor</strong> nebo povolit nebezpečné oprávnění.</li>
+  </ul><p class="small">Samotné otevření odkazu automaticky neznamená napadení. Riziko závisí na stránce, zařízení a dalších krocích.</p></section>
+  <section class="card"><h2>🛡️ Jak se zachovat příště?</h2><ol>
+    <li><strong>Nespěchejte.</strong> Podezřelé výhry a časový tlak berte jako varování.</li>
+    <li><strong>Ověřte odesílatele a adresu odkazu.</strong> Nestačí, že stránka vypadá důvěryhodně.</li>
+    <li><strong>Nepřihlašujte se přes odkazy z nečekaných e-mailů.</strong> Otevřete si službu sami přes známou adresu.</li>
+    <li><strong>Pokud jste zadali heslo,</strong> změňte ho přes oficiální web, zapněte dvoufázové ověření a informujte správce či učitele.</li>
+    <li><strong>Pokud jste něco stáhli,</strong> neotevírejte soubor a požádejte o pomoc.</li>
+  </ol></section>
+  <footer>Školní simulace phishingu · Přemýšlejte dřív, než kliknete.</footer>
+</main>
+</body>
+</html>
