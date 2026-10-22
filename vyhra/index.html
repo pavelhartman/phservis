@@ -1,45 +1,30 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1220">
-  <title>Phishing: právě jste klikli na návnadu</title>
-  <style>
-    :root{color-scheme:dark;--bg:#0b1220;--panel:#152236;--text:#edf4ff;--muted:#b5c4d8;--red:#ff6975;--blue:#6fd8ff;--green:#91e8b2}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#1d3049 0,#0b1220 55%);color:var(--text);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-    main{max-width:780px;margin:auto;padding:clamp(24px,6vw,64px) 20px 70px}.eyebrow{color:var(--blue);font-weight:800;letter-spacing:.14em;font-size:.8rem;text-transform:uppercase}
-    h1{font-size:clamp(2.1rem,6vw,3.5rem);line-height:1.12;margin:.5em 0}.warning{color:var(--red)}.lead{font-size:1.15rem;color:var(--muted)}
-    .card{background:var(--panel);border:1px solid #344861;border-radius:18px;padding:25px;margin:24px 0;box-shadow:0 15px 35px #0002}h2{font-size:1.35rem;margin:0 0 12px}ul,ol{padding-left:1.4rem}li{margin:.6rem 0}strong{color:#fff}
-    .good{border-left:5px solid var(--green)}.small{color:var(--muted);font-size:.9rem}footer{margin-top:32px;text-align:center;color:var(--muted);font-size:.9rem}.tag{display:inline-block;border:1px solid #48617a;border-radius:99px;padding:4px 12px;color:var(--blue);font-weight:700;font-size:.8rem}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#020903">
+<title>SECURITY ALERT // Phishingový test</title>
+<style>
+:root{color-scheme:dark;--green:#6bff8d;--muted:#a4cbb0;--bg:#020903}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#e4ffea;font-family:Consolas,'Courier New',monospace;line-height:1.65}#rain{position:fixed;inset:0;width:100%;height:100%;z-index:-2;opacity:.42;pointer-events:none}.shade{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(1,9,3,.93),rgba(1,9,3,.73) 55%,rgba(1,9,3,.9)),radial-gradient(ellipse at 50% 10%,transparent,#010702 85%)}.wrap{width:min(850px,calc(100% - 32px));margin:0 auto;padding:50px 0 70px}.topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;letter-spacing:.13em;color:var(--green);border-bottom:1px solid #266b3c;padding-bottom:16px}.status{display:inline-flex;align-items:center;gap:8px}.dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green);animation:pulse 1.4s infinite}.hero{padding:65px 0 36px}.eyebrow{color:var(--green);font-size:clamp(12px,2vw,16px);letter-spacing:.16em}.hero h1{font-size:clamp(38px,8vw,78px);line-height:1.06;letter-spacing:-.045em;margin:17px 0 20px;text-shadow:0 0 35px #1fff5760}.hero h1 span{color:var(--green)}.type{font-size:clamp(16px,2.4vw,22px);min-height:2em;color:#c4fbd0}.cursor{display:inline-block;width:10px;height:1.1em;background:var(--green);vertical-align:-.18em;animation:blink .8s steps(1) infinite}.lead{font-size:17px;max-width:700px;color:#d4e8d7}.notice{border:1px solid #3da85d;background:rgba(3,30,11,.77);padding:22px 25px;margin:30px 0 36px;box-shadow:0 0 32px #0a8f2a18}.notice strong{color:var(--green)}.section{margin:34px 0;padding:26px;border:1px solid #215432;background:rgba(2,14,6,.88);border-radius:3px}.section h2{font-size:21px;color:var(--green);margin:0 0 14px}.section p{margin:0 0 12px}.section p:last-child{margin-bottom:0}.items{list-style:none;padding:0;margin:0}.items li{padding:11px 0;border-top:1px solid #1b3c25}.items li:first-child{border-top:0}.items li:before{content:'> ';color:var(--green);font-weight:bold}.muted{color:var(--muted)}.good{border-left:3px solid var(--green)}.action{display:inline-block;border:1px solid var(--green);background:#092713;color:var(--green);padding:12px 20px;text-decoration:none;font:inherit;font-weight:bold;margin-top:12px;transition:.2s}.action:hover,.action:focus-visible{background:var(--green);color:#001805;outline:2px solid #b4ffc4;outline-offset:3px}footer{color:#8aaf94;text-align:center;font-size:12px;padding:30px 0;border-top:1px solid #1a4b2a}::selection{background:#6bff8d;color:#001805}@keyframes blink{50%{opacity:0}}@keyframes pulse{50%{opacity:.25}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cursor,.dot{animation:none}}
+
+.intro{position:fixed;inset:0;z-index:30;background:#010401;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .65s ease,visibility .65s ease}.intro.done{opacity:0;visibility:hidden;pointer-events:none}.intro-inner{width:min(760px,100%);border:1px solid #276a37;background:rgba(0,12,3,.91);padding:clamp(25px,6vw,65px);box-shadow:0 0 90px #008f292d}.intro-kicker{font-size:clamp(12px,2vw,16px);letter-spacing:.25em;color:#76ff97}.intro-title{font-size:clamp(40px,9vw,90px);line-height:1.1;color:#86ff9b;margin:22px 0;text-shadow:0 0 18px #00e447,0 0 55px #008f2b;animation:glitch .22s 3 alternate}.intro-sub{color:#b7e8c1;letter-spacing:.09em}.intro-progress{height:3px;background:#16371f;margin:28px auto 0;overflow:hidden}.intro-progress:after{content:"";display:block;background:#6bff8d;height:100%;width:0;animation:load 2.8s linear forwards}.skip{font:inherit;margin-top:24px;background:transparent;color:#b8d9c0;border:1px solid #456c50;padding:9px 15px;cursor:pointer}.skip:hover,.skip:focus-visible{color:#001805;background:#6bff8d}@keyframes load{to{width:100%}}@keyframes glitch{0%{transform:translateX(-3px)}100%{transform:translateX(3px)}}@media(prefers-reduced-motion:reduce){.intro-title,.intro-progress:after{animation:none}.intro{transition:none}}
+</style>
 </head>
-<body>
-<main>
-  <div class="eyebrow">IKT · Bezpečnost na internetu</div>
-  <h1><span class="warning">Pozor!</span><br>Právě jste klikli na phishingovou návnadu.</h1>
-  <p class="lead">Žádný telefon jste nevyhráli. E-mail byl součástí školního cvičení, které ukazuje, jak snadno nás může podvodná zpráva přimět k rychlému kliknutí.</p>
-  <div class="card good"><span class="tag">Dobrá zpráva</span><h2 style="margin-top:12px">Tohle byla simulace</h2><p>Tato stránka po vás nechce žádné údaje, nic nestahuje a nemá formulář. Cílem je ukázat riziko, ne vás nachytat kvůli známce.</p></div>
-  <section class="card"><h2>🚩 Co mělo vzbudit podezření?</h2><ul>
-    <li><strong>Výhra bez soutěže:</strong> Kdy a kde jste se vlastně přihlásili?</li>
-    <li><strong>Nátlak na čas:</strong> „Do 24 hodin“ má zabránit přemýšlení.</li>
-    <li><strong>Žádost o ověření totožnosti:</strong> Podvodníci často chtějí hesla nebo osobní údaje.</li>
-    <li><strong>Neznámý odesílatel:</strong> Adresa sama o sobě nedokazuje, kdo zprávu poslal.</li>
-    <li><strong>Odkaz na nesouvisející web:</strong> Doména <code>github.io</code> není web pořadatele údajné soutěže.</li>
-  </ul></section>
-  <section class="card"><h2>⚠️ Co by se mohlo stát doopravdy?</h2><ul>
-    <li>Na falešné stránce byste zadali <strong>heslo</strong> a útočník by mohl převzít váš účet.</li>
-    <li>Mohli byste prozradit <strong>osobní nebo platební údaje</strong>.</li>
-    <li>Stránka by vás mohla přimět <strong>stáhnout škodlivý soubor</strong> nebo povolit nebezpečné oprávnění.</li>
-  </ul><p class="small">Samotné otevření odkazu automaticky neznamená napadení. Riziko závisí na stránce, zařízení a dalších krocích.</p></section>
-  <section class="card"><h2>🛡️ Jak se zachovat příště?</h2><ol>
-    <li><strong>Nespěchejte.</strong> Podezřelé výhry a časový tlak berte jako varování.</li>
-    <li><strong>Ověřte odesílatele a adresu odkazu.</strong> Nestačí, že stránka vypadá důvěryhodně.</li>
-    <li><strong>Nepřihlašujte se přes odkazy z nečekaných e-mailů.</strong> Otevřete si službu sami přes známou adresu.</li>
-    <li><strong>Pokud jste zadali heslo,</strong> změňte ho přes oficiální web, zapněte dvoufázové ověření a informujte správce či učitele.</li>
-    <li><strong>Pokud jste něco stáhli,</strong> neotevírejte soubor a požádejte o pomoc.</li>
-  </ol></section>
-  <footer>Školní simulace phishingu · Přemýšlejte dřív, než kliknete.</footer>
+<body><div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Úvodní upozornění"><div class="intro-inner"><div class="intro-kicker">&gt; INCOMING TRANSMISSION_</div><div class="intro-title">SYSTEM<br>BREACHED</div><div class="intro-sub">NEZNÁMÝ ODKAZ OTEVŘEN // OVĚŘOVÁNÍ...</div><div class="intro-progress" aria-hidden="true"></div><button class="skip" id="skipIntro" type="button">PŘEJÍT NA VYSVĚTLENÍ &gt;</button></div></div><canvas id="rain" aria-hidden="true"></canvas><div class="shade"></div>
+<main class="wrap">
+<header class="topline"><span>PHISHING_SIMULATION // ŠKOLNÍ PROJEKT</span><span class="status"><span class="dot"></span> SYSTEM ONLINE</span></header>
+<section class="hero"><div class="eyebrow">&gt; SECURITY ALERT_</div><h1>PŘÍSTUP<br><span>ZAZNAMENÁN.</span></h1><div class="type"><span id="typed">Právě jsi klikl na podezřelý odkaz.</span><span class="cursor" aria-hidden="true"></span></div><p class="lead">Vítej v realitě. E-mail s výhrou nového telefonu byl <strong>simulovaný phishingový útok</strong>. Cílem bylo zjistit, zda poznáš podvodnou zprávu.</p></section>
+<div class="notice"><strong>✓ TENTOKRÁT JSI V BEZPEČÍ.</strong><br>Tohle je výuková stránka. Nežádáme žádná hesla ani osobní údaje. Samotné otevření tohoto odkazu neznamená, že byl tvůj telefon nebo počítač napaden.</div>
+<section class="section"><h2>01 // CO TĚ MĚLO VAROVAT?</h2><ul class="items"><li><strong>Nečekaná výhra.</strong> Můžeš vyhrát soutěž, do které ses vůbec nepřihlásil?</li><li><strong>Časový nátlak.</strong> „Potvrď do 24 hodin“ tě má přimět jednat bez přemýšlení.</li><li><strong>Žádost o totožnost.</strong> Proč by měl neznámý odesílatel potřebovat tvé osobní údaje?</li><li><strong>Podezřelý odkaz.</strong> Adresa stránky sama o sobě nedokazuje, že jde o oficiální web pořadatele.</li><li><strong>Nejasný odesílatel.</strong> Název „oddělení zákaznických odměn“ neříká, jaká firma výhru pořádá.</li></ul></section>
+<section class="section"><h2>02 // CO SE MOHLO STÁT?</h2><p>Skutečný útočník by tě mohl přesměrovat na falešný formulář a pokusit se získat <strong>heslo, telefonní číslo, osobní údaje nebo platební kartu</strong>. Mohl by tě také přimět stáhnout škodlivý soubor.</p><p class="muted">Pouhé kliknutí automaticky neznamená ztrátu dat. Riziko však může vzniknout i při otevření nebezpečné stránky, zejména na neaktualizovaném zařízení.</p></section>
+<section class="section good"><h2>03 // JAK SE ZACHOVAT PŘÍŠTĚ?</h2><ul class="items"><li>Než klikneš, zkontroluj odesílatele i skutečnou adresu odkazu.</li><li>Nenech se tlačit časem, výhrou ani hrozbou ztráty účtu.</li><li>Nezadávej hesla a citlivé údaje na stránkách otevřených z nevyžádaných zpráv.</li><li>V případě pochybností otevři oficiální web služby ručně.</li><li>Pokud už jsi heslo zadal, změň ho přes oficiální web, zapni vícefaktorové ověření a informuj správce účtu. Pokud jsi stáhl soubor, nespouštěj ho a požádej o pomoc.</li></ul></section>
+<section class="section"><h2>04 // KRÁTKÁ OTÁZKA</h2><p><strong>Co tě na původním e-mailu mělo zarazit jako první?</strong></p><p class="muted">Zkus si odpovědět ještě před diskusí ve třídě. Cílem testu není někoho nachytat, ale naučit se podobné situace rozpoznat.</p><a class="action" href="#top" id="again">&gt; ZPĚT NA ZAČÁTEK</a></section>
+<footer>END OF SIMULATION // THINK BEFORE YOU CLICK<br>Vzdělávací simulace phishingu • Bez formulářů a sledování návštěvníků</footer>
 </main>
-</body>
-</html>
+<script>
+(()=>{const intro=document.getElementById('intro'),skip=document.getElementById('skipIntro');let done=false;function close(){if(done)return;done=true;intro.classList.add('done');intro.setAttribute('aria-hidden','true');skip.tabIndex=-1;setTimeout(()=>intro.remove(),700)}skip.addEventListener('click',close);setTimeout(close,matchMedia('(prefers-reduced-motion: reduce)').matches?300:3000)})();
+(()=>{const c=document.getElementById('rain'),ctx=c.getContext('2d');if(!ctx||matchMedia('(prefers-reduced-motion: reduce)').matches)return;let w,h,cols,drops,last=0;const chars='01アイウエオカキクケコサシスセソ';function resize(){const dpr=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;c.width=w*dpr;c.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);cols=Math.ceil(w/18);drops=Array.from({length:cols},()=>Math.random()*-60)}resize();addEventListener('resize',resize);function draw(t){requestAnimationFrame(draw);if(t-last<55)return;last=t;ctx.fillStyle='rgba(2,9,3,.09)';ctx.fillRect(0,0,w,h);ctx.font='15px monospace';ctx.fillStyle='#28bc4d';for(let i=0;i<cols;i++){const y=drops[i]*18;ctx.fillText(chars[Math.floor(Math.random()*chars.length)],i*18,y);if(y>h&&Math.random()>.975)drops[i]=0;else drops[i]+=.55}}requestAnimationFrame(draw)})();
+(()=>{const e=document.getElementById('typed');if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const s=e.textContent;e.textContent='';let i=0;const timer=setInterval(()=>{e.textContent=s.slice(0,++i);if(i>=s.length)clearInterval(timer)},42)})();
+document.getElementById('again').addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})});
+</script>
+</body></html>
